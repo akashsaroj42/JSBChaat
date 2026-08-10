@@ -1,0 +1,26 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Node dependencies and build output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+*.log
+
+# Maven / Java build output
+target/
+backend/target/
+backend/uploads/
+
+# IDE / Editor configuration
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws

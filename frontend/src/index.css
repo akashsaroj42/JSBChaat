@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-maroon-dark: #3b020e;
+  --color-maroon-primary: #5c061c;
+  --color-maroon-light: #7e162b;
+  --color-maroon-soft: #a82e44;
+  --color-gold-dark: #9e7f1d;
+  --color-gold-primary: #d4af37;
+  --color-gold-light: #ebd077;
+  --color-cream-dark: #f0ebd9;
+  --color-cream-primary: #fdfbf7;
+  --color-cream-light: #ffffff;
+
+  --font-serif: "Cinzel", "Playfair Display", Georgia, serif;
+  --font-sans: "Outfit", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream-primary);
+    color: var(--color-maroon-dark);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-maroon-primary);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-maroon-light);
+  }
+
+  /* Selection Highlight */
+  ::selection {
+    background-color: var(--color-gold-primary);
+    color: var(--color-maroon-dark);
+  }
+}
+
+/* Custom Utilities */
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #ebd077 50%, #9e7f1d 100%);
+}
+
+.maroon-gradient {
+  background: linear-gradient(135deg, #5c061c 0%, #3b020e 100%);
+}
+
+.glass-card {
+  background: rgba(253, 251, 247, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.timeline-line {
+  background: linear-gradient(to bottom, #d4af37 0%, #5c061c 100%);
+}
