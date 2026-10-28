@@ -8,4 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  server: {
+    port: 5173,
+    proxy: {
+      '/uploads': 'http://localhost:8081'
+    }
+  }
 })
