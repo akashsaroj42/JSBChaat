@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: jsb-chaat-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /api/menu
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: h2

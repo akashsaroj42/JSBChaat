@@ -11,13 +11,13 @@ RUN mvn clean package -DskipTests
 # Stage 2: Runtime image
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
-COPY --from=build /app/target/jsb-chaat-backend-1.0.0.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 # Create uploads directory
 RUN mkdir -p uploads
 
-# Expose port (Render/Railway typically set PORT environment variable)
+# Expose default port
 ENV PORT=8080
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]
